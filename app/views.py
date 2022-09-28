@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify , render_template
 from flask_sqlalchemy import SQLAlchemy
 from app import app
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/startyounguk'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://startyounguk:DBpassword01@startyoungukdb.postgres.database.azure.com/startyoungukdb'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
