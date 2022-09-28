@@ -1,3 +1,5 @@
 Flask>=2.0,<=2.1.1
 flask_sqlalchemy
 jsonify
+python-dotenv
+psycopg2
