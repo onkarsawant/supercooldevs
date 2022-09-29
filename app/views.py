@@ -49,6 +49,18 @@ class Student(db.Model):
 def hello():
     return render_template("index.html")
 
+@app.route("/home")
+def home():
+    return render_template("index2.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/blog")
+def successStories():
+    return render_template("blog.html")
+
 @app.route("/add")
 def addStudent():
     return render_template("addStudent.html")
@@ -56,7 +68,7 @@ def addStudent():
 
 @app.route("/addSchool")
 def addSchool():
-    return render_template("addSchool.html")
+    return render_template("addSchool2.html")
 
 
 

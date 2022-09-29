@@ -82,45 +82,58 @@
 				</div>
 			</div>
 		</div>
-		<header id="fh5co-header-section" class="sticky-banner">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html">Charity</a></h1>
-					<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li>
-								<a href="index.html">Home</a>
-							</li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Get Involved</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">Donate</a></li>
-									<li><a href="#">Fundraise</a></li>
-									<li><a href="#">Campaign</a></li>
-									<li><a href="#">Philantrophy</a></li>
-									<li><a href="#">Volunteer</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Projects</a>
-								 <ul class="fh5co-sub-menu">
-								 	<li><a href="#">Water World</a></li>
-								 	<li><a href="#">Cloth Giving</a></li>
-								 	<li><a href="#">Medical Mission</a></li>
-								</ul>
-							</li>
-							<li><a href="about.html">About</a></li>
-							<li class="active"><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-		
-		
+               <header id="fh5co-header-section" class="sticky-banner">
+                        <div class="container">
+                                <div class="nav-header">
+                                        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+                                        <h1 style="color:#ff33cc;" id="fh5co-logo"><a href="{{ url_for('hello') }}">Start Young</a></h1>
+                                        <!-- START #fh5co-menu-wrap -->
+                                        <nav id="fh5co-menu-wrap" role="navigation">
+                                                <ul class="sf-menu" id="fh5co-primary-menu">
+                                                        <li class="active">
+                                                                <a href="{{ url_for('home') }}">Home</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#" class="fh5co-sub-ddown">Schools</a>
+                                                                <ul class="fh5co-sub-menu">
+                                                                        <li><a href="{{ url_for('addSchool') }}">School Registration</a></li>
+                                                                        <li><a href="#">Edit School</a></li>
+                                                                        <li><a href="#">Student Registration</a></li>
+                                                                        <li><a href="#">Edit Student</a></li>
+                                                                        <li><a href="#">List Students</a></li>
+                                                                </ul>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#" class="fh5co-sub-ddown">Charity</a>
+                                                                 <ul class="fh5co-sub-menu">
+                                                                        <li><a href="#">Schools</a></li>
+                                                                        <li><a href="#">Students</a></li>
+                                                                        <li><a href="#">Sponsors</a></li>
+                                                                        <li><a href="#">Approvals</a></li>
+                                                                        <li><a href="#">Student Reporting</a></li>
+                                                                        <li><a href="#">Buddy Reporting</a></li>
+                                                                        <li><a href="#">Corporate Reporting</a></li>
+                                                                        <li><a href="#">Charity Leads</a></li>
+                                                                        <li><a href="#">Unregister</a></li>
+                                                                </ul>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#" class="fh5co-sub-ddown">Sponsorship</a>
+                                                                 <ul class="fh5co-sub-menu">
+                                                                        <li><a href="#">Buddy Registration</a></li>
+                                                                        <li><a href="#">Donation</a></li>
+                                                                        <li><a href="#">Corporate Registration</a></li>
+                                                                        <li><a href="#">Status</a></li>
+                                                                </ul>
+                                                        </li>
+                                                        <li><a href="{{ url_for('successStories') }}">Success Stories</a></li>
+                                                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                                                </ul>
+                                        </nav>
+                                </div>
+                        </div>
+                </header>
+
 
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
