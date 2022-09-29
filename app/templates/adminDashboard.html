@@ -1,0 +1,44 @@
+
+
+<table id="schools">
+    <tr>
+        <td>Registration ID</td>
+        <td>School Name</td>
+    </tr>
+
+    {% for data in Scdata %}
+    <tr>
+        <td>{{ data['sc_id'] }}</td> 
+        <td>{{ data['sc_name'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br><br><br>
+
+<table id="Students">
+    <tr>
+        <td>Name</td>
+        <td>Lastname</td>
+        <td>School</td>
+        <td>Spon. Status</td>
+    </tr>
+
+    {% for data in Stdata %}
+    <tr>
+        <td>{{ data['name'] }}</td> 
+        <td>{{ data['lastname'] }}</td>
+        <td>{{ data['st_school'] }}</td> 
+        <td>{{ data['st_spon_status'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    
+</table>
+
+<br><br><br>
+
+<table id="Sponsors">
+
+    
+</table>

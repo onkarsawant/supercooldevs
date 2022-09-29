@@ -33,6 +33,7 @@ class School(db.Model):
     self.sc_address=sc_address
 
 
+
 class Student(db.Model):
   __tablename__='students'
   id=db.Column(db.Integer,primary_key=True)
@@ -80,12 +81,16 @@ class Sponsor(db.Model):
     self.sp_occ=sp_occ
     self.sp_email=sp_email
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> development
 
 @app.route("/")
 def hello():
     return render_template("index.html")
 
+<<<<<<< HEAD
 @app.route("/home")
 def home():
     return render_template("index2.html")
@@ -106,10 +111,15 @@ def login():
 def loginok():
     return render_template("loginok.html")
 
+=======
+>>>>>>> development
 @app.route("/addStudent")
 def addStudent():
     return render_template("addStudent2.html")
 
+@app.route("/addSponsor")
+def addSponsor():
+    return render_template("addSponsor.html")
 
 @app.route("/addSchool")
 def addSchool():
@@ -187,6 +197,79 @@ def fetchDBPrivate():
     return (render_template('adminDashboard.html', Stdata=st_results , Scdata=sc_results , StPnSp=st_pending_scrng , SpPnSp=sp_pending_scrng))
 
 
+@app.route("/fetchDB")
+def fetchDBPulic():
+    sc_all = School.query.all()
+    st_all = Student.query.all()
+    sp_all = Sponsor.query.all()
+
+    st_results = [
+            {
+                'name': student.fname,
+                'lastname': student.lname,
+                'st_school': student.st_school,
+                'st_spon_status': student.st_spon_status
+            } for student in st_all ]
+    sc_results = [
+            {
+                'sc_id': school.sc_id,
+                'sc_name': school.sc_name
+            } for school in sc_all ]
+    sp_results = [
+            {
+                'name': sponsor.fname,
+                'lastname': sponsor.lname
+            } for sponsor in sp_all ]
+    
+
+    st_pending_scrng_stmt = select([Student.fname,Student.lname]).where(and_( Student.st_is_appr==None)) 
+    st_pending_scrng = [dict(row) for row in db.session.execute(st_pending_scrng_stmt)]
+
+    st_pending_spnsr_stmt = select([Student.fname,Student.lname]).where(and_( Student.st_is_appr=='yes', Student.st_spon_status==None)) 
+    st_pending_spnsr = [dict(row) for row in db.session.execute(st_pending_spnsr_stmt)]
+
+    return { "School's registered": len(sc_results) , "Total Students": len(st_results) , "Students pending sponsorship": len(st_pending_spnsr) , "Students under screening and onboarding": len(st_pending_scrng), "Our Sponsors": len(sp_results) }
+
+
+
+@app.route("/fetchDBPriv")
+def fetchDBPrivate():
+    sc_all = School.query.all()
+    st_all = Student.query.all()
+    sp_all = Sponsor.query.all()
+
+    st_results = [
+            {
+                'name': student.fname,
+                'lastname': student.lname,
+                'st_school': student.st_school,
+                'st_spon_status': student.st_spon_status
+            } for student in st_all ]
+    sc_results = [
+            {
+                'sc_id': school.sc_id,
+                'sc_name': school.sc_name
+            } for school in sc_all ]
+    sp_results = [
+            {
+                'name': sponsor.fname,
+                'lastname': sponsor.lname
+            } for sponsor in sp_all ]
+    
+
+    sp_pending_scrng_stmt = select([Sponsor.fname,Sponsor.lname]).where(and_( Sponsor.sp_is_appr==None)) 
+    sp_pending_scrng = [dict(row) for row in db.session.execute(sp_pending_scrng_stmt)]
+
+    st_pending_scrng_stmt = select([Student.fname,Student.lname]).where(and_( Student.st_is_appr==None)) 
+    st_pending_scrng = [dict(row) for row in db.session.execute(st_pending_scrng_stmt)]
+
+    st_pending_spnsr_stmt = select([Student.fname,Student.lname]).where(and_( Student.st_is_appr=='yes', Student.st_spon_status==None)) 
+    st_pending_spnsr = [dict(row) for row in db.session.execute(st_pending_spnsr_stmt)]
+
+
+    return (render_template('adminDashboard.html', Stdata=st_results , Scdata=sc_results , StPnSp=st_pending_scrng , SpPnSp=sp_pending_scrng))
+
+
 
 @app.route("/submit", methods=['POST'])
 def submit():
@@ -210,6 +293,35 @@ def submit():
   return render_template('success.html', data=fname)
 
 
+<<<<<<< HEAD
+=======
+
+@app.route("/submitSponsor", methods=['POST'])
+def submitSponsor():
+  fname= request.form['fname']
+  lname=request.form['lname']
+  sp_age=request.form['sp_age']
+  sp_location=request.form['sp_location']
+  sp_contact=request.form['sp_contact']
+  sp_email=request.form['sp_email']
+  sp_hby=request.form['hobby']
+  sp_occ=request.form['sp_occ']
+
+  sponsor=Sponsor(fname,lname,sp_age,sp_location,sp_contact,sp_email,sp_hby,sp_occ)
+  db.session.add(sponsor)
+  db.session.commit()
+
+  #fetch a certain student2
+  sponsorResult=db.session.query(Sponsor).filter(Sponsor.id==1)
+  for result in sponsorResult:
+    print(result.fname)
+
+  return render_template('success.html', data=fname)
+
+
+
+
+>>>>>>> development
 @app.route("/submitSchool", methods=['POST'])
 def submitSchool():
   sc_id= request.form['sc_id']
