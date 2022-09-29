@@ -97,11 +97,11 @@
 								<a href="#" class="fh5co-sub-ddown">Schools</a>
 								<ul class="fh5co-sub-menu">
 									<li><a href="{{ url_for('login') }}">login</a></li>
-									<li><a href="#">School Registration</a></li>
-									<li><a href="#">Edit School</a></li>
-									<li><a href="#">Student Registration</a></li>
-									<li><a href="#">Edit Student</a></li>
-									<li><a href="#">List Students</a></li>
+									<li><a href="{{ url_for('addSchool') }}">School Registration</a></li>
+                                                                        <li><a href="#">Edit School</a></li>
+                                                                        <li><a href="{{ url_for('addStudent') }}">Student Registration</a></li>
+                                                                        <li><a href="#">Edit Student</a></li>
+                                                                        <li><a href="#">List Students</a></li>
 								</ul>
 							</li>
 							<li>
@@ -132,7 +132,6 @@
 				</div>
 			</div>
 		</header>
-
 		
 		
 
@@ -142,10 +141,10 @@
 				<div class="desc animate-box">
 					<h2><strong>Empowering</strong> young people  <strong>to achieve</strong></h2>
 					<span>START YOUNG UK UK <a href="" target="_blank" class="fh5co-site-name"></a></span>
+				</div>
+			</div>
 
-	
-	               
-
+		</div>
 		<!-- end:header-top -->
 		<div id="fh5co-features">
 			<div class="container">
@@ -193,7 +192,6 @@
 				</div>
 			</div>
 		</div>
-
 
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
@@ -529,6 +527,5 @@
 	<script src="js/main.js"></script>
 
 	</body>
-
 </html>
 

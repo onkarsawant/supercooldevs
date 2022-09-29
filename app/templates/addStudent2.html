@@ -137,25 +137,84 @@
 			<div class="fh5co-overlay"></div>
 			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_2.jpg);">
 				<div class="desc animate-box">
-					<h2><strong>School</strong> Registration</h2>
+					<h2><strong>Student Pupil</strong> Registration</h2>
 					<span>School and Charity Partnership Form</span>
 					<span><a href="https://www.startyounguk.com/" target="_blank" class="fh5co-site-name">https://www.startyounguk.com/</a></span>
 				</div>
 			</div>
 
 		</div>
-		<!DOCTYPE html>
 
-		<div id="popup1" class="overlay">
-		   <div class="popup">
-				<h2>Your data has been send successfully.</h2>
-			<a class="close" href="#">&times;</a>
-		        <div class="content">
-		      		You will be now receiving an appointment after screening and verification {{data}}!	
+<body>
+		<div id="fh5co-contact" class="animate-box">
+			<div class="container">
+				<form action="/submitStudent" method="POST">
+					<div class="row">
+						<div class="col-md-6">
+							<h3 class="section-title">Student Registration</h3>
+							<p>Student Registration will be validated before approval - please monitor status of registration</p>
+						</div>
+						<body>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text"  id="fname" name="fname" class="form-control" placeholder="First Name">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="lname" name="lname" class="form-control" placeholder="Last Name">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="st_age" name="st_age" class="form-control" placeholder="Student Age">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+								      <label for="st_hby">Student Hobby:</label><br>
+								      <input type="radio" id="st_hby1" name="hobby" class="form-control" value="Sports">
+								      <label for="sports"> Sports</label><br>
+								      <input type="radio" id="st_hby2" name="hobby" class="form-control" value="Art">
+								      <label for="art"> Art</label><br>
+								      <input type="radio" id="st_hby3" name="hobby" class="form-control" value="Music">
+								      <label for="music"> Music</label><br>
+								      <input type="radio" id="st_hby4" name="hobby" class="form-control" value="Science">
+								      <label for="science"> Science</label><br><br>
+							       </div>
+						        </div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="st_location" name="st_location" class="form-control" placeholder="Address">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="st_contact" name="st_contact" class="form-control" placeholder="Parent Guardian/Contact">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="st_school" name="st_school" class="form-control" placeholder="School Name">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="submit" value="Send" class="btn btn-primary">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
-	 	  </div>
 		</div>
-
+		<!-- END fh5co-contact -->
+		<div id="map" class="fh5co-map"></div>
+		<!-- END map -->
 
 		
 		<footer>

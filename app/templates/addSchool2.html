@@ -144,18 +144,56 @@
 			</div>
 
 		</div>
-		<!DOCTYPE html>
-
-		<div id="popup1" class="overlay">
-		   <div class="popup">
-				<h2>Your data has been send successfully.</h2>
-			<a class="close" href="#">&times;</a>
-		        <div class="content">
-		      		You will be now receiving an appointment after screening and verification {{data}}!	
+		<div id="fh5co-contact" class="animate-box">
+			<div class="container">
+				<form action="/submitSchool" method="POST">
+					<div class="row">
+						<div class="col-md-6">
+							<h3 class="section-title">School Registration</h3>
+							<p>School Registration will be validated before approval. Please monitor status of registration.</p>
+						</div>
+						<body>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="sc_name" name="sc_name" class="form-control" placeholder="School Name">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="sc_id" name="sc_id" class="form-control" placeholder="Registration Number">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="sc_contact" name="sc_contact" class="form-control" placeholder="Contact">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="sc_email" name="sc_email" class="form-control" placeholder="Email">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" id="sc_address" name="sc_address" class="form-control" placeholder="Address">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="submit" value="Send" class="btn btn-primary">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
-	 	  </div>
 		</div>
-
+		<!-- END fh5co-contact -->
+		<div id="map" class="fh5co-map"></div>
+		<!-- END map -->
 
 		
 		<footer>
