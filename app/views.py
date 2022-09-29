@@ -81,38 +81,11 @@ class Sponsor(db.Model):
     self.sp_occ=sp_occ
     self.sp_email=sp_email
 
-<<<<<<< HEAD
-
-=======
->>>>>>> development
 
 @app.route("/")
 def hello():
     return render_template("index.html")
 
-<<<<<<< HEAD
-@app.route("/home")
-def home():
-    return render_template("index2.html")
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
-
-@app.route("/blog")
-def successStories():
-    return render_template("blog.html")
-
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-@app.route("/loginok")
-def loginok():
-    return render_template("loginok.html")
-
-=======
->>>>>>> development
 @app.route("/addStudent")
 def addStudent():
     return render_template("addStudent2.html")
@@ -293,8 +266,6 @@ def submit():
   return render_template('success.html', data=fname)
 
 
-<<<<<<< HEAD
-=======
 
 @app.route("/submitSponsor", methods=['POST'])
 def submitSponsor():
@@ -321,7 +292,6 @@ def submitSponsor():
 
 
 
->>>>>>> development
 @app.route("/submitSchool", methods=['POST'])
 def submitSchool():
   sc_id= request.form['sc_id']
