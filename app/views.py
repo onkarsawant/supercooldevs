@@ -61,9 +61,17 @@ def contact():
 def successStories():
     return render_template("blog.html")
 
-@app.route("/add")
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/loginok")
+def loginok():
+    return render_template("loginok.html")
+
+@app.route("/addStudent")
 def addStudent():
-    return render_template("addStudent.html")
+    return render_template("addStudent2.html")
 
 
 @app.route("/addSchool")
@@ -72,7 +80,7 @@ def addSchool():
 
 
 
-@app.route("/submit", methods=['POST'])
+@app.route("/submitStudent", methods=['POST'])
 def submit():
   fname= request.form['fname']
   lname=request.form['lname']

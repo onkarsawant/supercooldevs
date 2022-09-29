@@ -97,11 +97,11 @@
 								<a href="#" class="fh5co-sub-ddown">Schools</a>
 								<ul class="fh5co-sub-menu">
 									<li><a href="{{ url_for('login') }}">login</a></li>
-									<li><a href="#">School Registration</a></li>
-									<li><a href="#">Edit School</a></li>
-									<li><a href="#">Student Registration</a></li>
-									<li><a href="#">Edit Student</a></li>
-									<li><a href="#">List Students</a></li>
+									<li><a href="{{ url_for('addSchool') }}">School Registration</a></li>
+                                                                        <li><a href="#">Edit School</a></li>
+                                                                        <li><a href="{{ url_for('addStudent') }}">Student Registration</a></li>
+                                                                        <li><a href="#">Edit Student</a></li>
+                                                                        <li><a href="#">List Students</a></li>
 								</ul>
 							</li>
 							<li>

@@ -86,7 +86,7 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="{{ url_for('hello') }}">Stay Young</a></h1>
+					<h1 style="color:#ff33cc;" id="fh5co-logo"><a href="{{ url_for('hello') }}">Start Young</a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
@@ -96,7 +96,8 @@
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Schools</a>
 								<ul class="fh5co-sub-menu">
-									<li><a href="{{ url_for('addSchool') }}">School Registration</a></li>
+									<li><a href="{{ url_for('login') }}">login</a></li>
+									<li><a href="#">School Registration</a></li>
 									<li><a href="#">Edit School</a></li>
 									<li><a href="#">Student Registration</a></li>
 									<li><a href="#">Edit Student</a></li>
@@ -127,7 +128,7 @@
 								</ul>
 							</li>
 							<li><a href="{{ url_for('successStories') }}">Success Stories</a></li>
-							<li><a href="/contact.html">Contact</a></li>
+							<li><a href="{{ url_for('contact') }}">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -142,7 +143,6 @@
 				<div class="desc animate-box">
 					<h2><strong>Empowering</strong> young people  <strong>to achieve</strong></h2>
 					<span>Start Young UK <a href="" target="_blank" class="fh5co-site-name"></a></span>
-					<span><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span>
 				</div>
 			</div>
 
