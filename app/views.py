@@ -86,6 +86,22 @@ class Sponsor(db.Model):
 def hello():
     return render_template("index.html")
 
+@app.route("/home")
+def home():
+    return render_template("index2.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/loginok")
+def loginok():
+    return render_template("loginok.html")
+
 @app.route("/addStudent")
 def addStudent():
     return render_template("addStudent2.html")
@@ -97,6 +113,10 @@ def addSponsor():
 @app.route("/addSchool")
 def addSchool():
     return render_template("addSchool2.html")
+
+@app.route("/successStories")
+def successStories():
+    return render_template("blog.html")
 
 
 @app.route("/fetchDB")
