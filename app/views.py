@@ -210,7 +210,7 @@ def fetchDBPrivate():
 
 
 
-@app.route("/submit", methods=['POST'])
+@app.route("/submitStudent", methods=['POST'])
 def submit():
   fname= request.form['fname']
   lname=request.form['lname']
