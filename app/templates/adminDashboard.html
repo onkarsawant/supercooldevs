@@ -1,5 +1,5 @@
 
-
+<h3>Registered Schools</h3>
 <table id="schools">
     <tr>
         <td>Registration ID</td>
@@ -16,6 +16,8 @@
 
 <br><br><br>
 
+
+<h3> Students Pending Sponsorship </h3><br>
 <table id="Students">
     <tr>
         <td>Name</td>
@@ -33,12 +35,65 @@
     </tr>
     {% endfor %}
 </table>
-    
-</table>
 
 <br><br><br>
 
-<table id="Sponsors">
+<h3> Students Pending Screening </h3><br>
+<table id="student_screening">
+<tr>
+    <td>Name</td>
+    <td>Lastname</td>
+    <td>School Name</td>
+    <td>Age</td>
+    <td>Address</td>
+    <td>Contact</td>
+    <td>Hobby</td>
+    <td>Spon. status</td>
+</tr>
 
+{% for data in StPnSp %}
+<tr>
+    <td>{{ data['fname'] }}</td>
+    <td>{{ data['lname'] }}</td>
+    <td>{{ data['st_school'] }}</td>
+    <td>{{ data['st_age'] }}</td>
+    <td>{{ data['st_location'] }}</td>
+    <td>{{ data['st_contact'] }}</td>
+    <td>{{ data['st_hby'] }}</td>
+    <td>{{ data['st_spon_status'] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+<br><br><br>
+
+<h3> Sponsors Verification </h3><br>
+
+<table id="Sponsors">
+    <tr>
+        <td>Name</td>
+        <td>Lastname</td>
+        <td>Age</td>
+        <td>Address</td>
+        <td>Contact</td>
+        <td>Hobby</td>
+        <td>Occupation</td>
+        <td>email</td>
+    </tr>
+    
+    {% for data in SpPnSp %}
+    <tr>
+        <td>{{ data['fname'] }}</td>
+        <td>{{ data['lname'] }}</td>
+        <td>{{ data['sp_age'] }}</td>
+        <td>{{ data['sp_location'] }}</td>
+        <td>{{ data['sp_contact'] }}</td>
+        <td>{{ data['sp_hby'] }}</td>
+        <td>{{ data['sp_occ'] }}</td>
+        <td>{{ data['sp_email'] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
     
 </table>

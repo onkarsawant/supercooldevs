@@ -130,7 +130,7 @@ def fetchDBPulic():
                 'name': student.fname,
                 'lastname': student.lname,
                 'st_school': student.st_school,
-                'st_spon_status': student.st_spon_status
+                'st_spon_status': student.st_spon_status,
             } for student in st_all ]
     sc_results = [
             {
@@ -140,7 +140,9 @@ def fetchDBPulic():
     sp_results = [
             {
                 'name': sponsor.fname,
-                'lastname': sponsor.lname
+                'lastname': sponsor.lname,
+                'sp_age': sponsor.sp_age,
+                'sp_location': sponsor.sp_location
             } for sponsor in sp_all ]
     
 
@@ -165,24 +167,39 @@ def fetchDBPrivate():
                 'name': student.fname,
                 'lastname': student.lname,
                 'st_school': student.st_school,
-                'st_spon_status': student.st_spon_status
+                'st_spon_status': student.st_spon_status,
+                'st_age': student.st_age,
+                'st_location': student.st_location,
+                'st_contact': student.st_contact,
+                'st_hby': student.st_hby,
+                'st_is_appr': student.st_is_appr
             } for student in st_all ]
     sc_results = [
             {
                 'sc_id': school.sc_id,
-                'sc_name': school.sc_name
+                'sc_name': school.sc_name,
+                'sc_contact': school.sc_contact,
+                'sc_email': school.sc_email,
+                'sc_address': school.sc_address
             } for school in sc_all ]
     sp_results = [
             {
                 'name': sponsor.fname,
-                'lastname': sponsor.lname
+                'lastname': sponsor.lname,
+                'sp_age': sponsor.sp_age,
+                'sp_location': sponsor.sp_location,
+                'sp_contact': sponsor.sp_contact,
+                'sp_hby': sponsor.sp_hby,
+                'sp_occ': sponsor.sp_occ,
+                'sp_email': sponsor.sp_email,
+                'sp_is_appr': sponsor.sp_is_appr
             } for sponsor in sp_all ]
     
 
-    sp_pending_scrng_stmt = select([Sponsor.fname,Sponsor.lname]).where(and_( Sponsor.sp_is_appr==None)) 
+    sp_pending_scrng_stmt = select([ Sponsor.fname , Sponsor.lname , Sponsor.sp_age , Sponsor.sp_location,Sponsor.sp_contact , Sponsor.sp_hby , Sponsor.sp_occ , Sponsor.sp_email]).where(and_( Sponsor.sp_is_appr==None)) 
     sp_pending_scrng = [dict(row) for row in db.session.execute(sp_pending_scrng_stmt)]
 
-    st_pending_scrng_stmt = select([Student.fname,Student.lname]).where(and_( Student.st_is_appr==None)) 
+    st_pending_scrng_stmt = select([Student.fname,Student.lname,Student.st_school,Student.st_age,Student.st_location,Student.st_contact,Student.st_hby]).where(and_( Student.st_is_appr==None)) 
     st_pending_scrng = [dict(row) for row in db.session.execute(st_pending_scrng_stmt)]
 
     st_pending_spnsr_stmt = select([Student.fname,Student.lname]).where(and_( Student.st_is_appr=='yes', Student.st_spon_status==None)) 
