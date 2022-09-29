@@ -26,15 +26,17 @@
         <td>Spon. Status</td>
     </tr>
 
-    {% for data in Stdata %}
+    {% for element in details %}
     <tr>
-        <td>{{ data['name'] }}</td> 
+        <td>{{ data[0] }}</td> 
         <td>{{ data['lastname'] }}</td>
         <td>{{ data['st_school'] }}</td> 
         <td>{{ data['st_spon_status'] }}</td>
-    </tr>
+    </tr> 
     {% endfor %}
 </table>
+<br>
+
 
 <br><br><br>
 
@@ -49,6 +51,7 @@
     <td>Contact</td>
     <td>Hobby</td>
     <td>Spon. status</td>
+    <td>Select</td>
 </tr>
 
 {% for data in StPnSp %}
@@ -61,10 +64,13 @@
     <td>{{ data['st_contact'] }}</td>
     <td>{{ data['st_hby'] }}</td>
     <td>{{ data['st_spon_status'] }}</td>
-</tr>
+    <td><input type="checkbox" name="stdata"></td>
+    </tr> 
 {% endfor %}
 </table>
+<br>
 
+<input type="button" class="button" value="Approve Request">
 
 <br><br><br>
 
@@ -80,6 +86,7 @@
         <td>Hobby</td>
         <td>Occupation</td>
         <td>email</td>
+        <td>Select</td>
     </tr>
     
     {% for data in SpPnSp %}
@@ -92,8 +99,14 @@
         <td>{{ data['sp_hby'] }}</td>
         <td>{{ data['sp_occ'] }}</td>
         <td>{{ data['sp_email'] }}</td>
-    </tr>
+        <td><input type="checkbox" name="stdata"></td>
+    </tr> 
     {% endfor %}
-    </table>
-    
 </table>
+    
+
+<br>
+
+<input type="button" class="button" value="Approve Request">
+
+<br><br><br>

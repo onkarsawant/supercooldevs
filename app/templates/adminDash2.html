@@ -62,6 +62,11 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<style>
+		table, th, td {
+  border: 1px solid black;
+	}
+	</style>
 	</head>
 	<body>
 		<div id="fh5co-wrapper">
@@ -134,226 +139,123 @@
 		</header>
 
 		
-		
 
-		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
-				<div class="desc animate-box">
-					<h2><strong>Empowering</strong> young people  <strong>to achieve</strong></h2>
-					<span>START YOUNG UK UK <a href="" target="_blank" class="fh5co-site-name"></a></span>
-				</div>
-			</div>
+		<body>
+			<div class="col-md-4">     
+		<h3>Registered Schools</h3>
+		<table id="schools">
+    		<tr>
+        		<td>Registration ID</td>
+        		<td>School Name</td>
+    		</tr>
+
+    		{% for data in Scdata %}
+    		<tr>
+        		<td>{{ data['sc_id'] }}</td>
+        		<td>{{ data['sc_name'] }}</td>
+    		</tr>
+    		{% endfor %}
+		</table>
+
+		<br><br><br>
+
+
+		<h3> Students Pending Sponsorship </h3><br>
+		<table id="Students">
+    		<tr>
+        		<td>Name</td>
+        		<td>Lastname</td>
+        		<td>School</td>
+        		<td>Spon. Status</td>
+    		</tr>
+
+    		{% for data in Stdata %}
+    		<tr>
+        		<td>{{ data['name'] }}</td>
+        		<td>{{ data['lastname'] }}</td>
+        		<td>{{ data['st_school'] }}</td>
+        		<td>{{ data['st_spon_status'] }}</td>
+    		</tr>
+    		{% endfor %}
+		</table>
+
+		<br><br><br>
+
+		<h3> Students Pending Screening </h3><br>
+		<table id="student_screening">
+		<tr>
+    			<td>Name</td>
+    			<td>Lastname</td>
+    			<td>School Name</td>
+    			<td>Age</td>
+    			<td>Address</td>
+    			<td>Contact</td>
+    			<td>Hobby</td>
+    			<td>Spon. status</td>
+				<td>Select</td>
+		</tr>
+
+		{% for data in StPnSp %}
+		<tr>
+    			<td>{{ data['fname'] }}</td>
+    			<td>{{ data['lname'] }}</td>
+    			<td>{{ data['st_school'] }}</td>
+    			<td>{{ data['st_age'] }}</td>
+    			<td>{{ data['st_location'] }}</td>
+    			<td>{{ data['st_contact'] }}</td>
+    			<td>{{ data['st_hby'] }}</td>
+    			<td>{{ data['st_spon_status'] }}</td>
+				<td><input type="checkbox" name="stdata"></td>
+		</tr>
+		{% endfor %}
+		</table>
+		<br>
+
+		<input type="button" class="button" value="Approve Request">
+
+		<br><br><br>
+
+		<br><br><br>
+
+		<h3> Sponsors Verification </h3><br>
+
+		<table id="Sponsors">
+    		<tr>
+        		<td>Name</td>
+        		<td>Lastname</td>
+        		<td>Age</td>
+        		<td>Address</td>
+        		<td>Contact</td>
+        		<td>Hobby</td>
+        		<td>Occupation</td>
+        		<td>email</td>
+				<td>Select</td>
+    		</tr>
+
+    		{% for data in SpPnSp %}
+    		<tr>
+        		<td>{{ data['fname'] }}</td>
+        		<td>{{ data['lname'] }}</td>
+        		<td>{{ data['sp_age'] }}</td>
+        		<td>{{ data['sp_location'] }}</td>
+        		<td>{{ data['sp_contact'] }}</td>
+        		<td>{{ data['sp_hby'] }}</td>
+        		<td>{{ data['sp_occ'] }}</td>
+        		<td>{{ data['sp_email'] }}</td>
+				<td><input type="checkbox" name="stdata"></td>
+    		</tr>
+    		{% endfor %}
+    		</table>
+
+			<br>
+
+			<input type="button" class="button" value="Approve Request">
+
+			<br><br><br>
 
 		</div>
+		</body>  
 
-
-		<!-- end:header-top -->
-		<div id="fh5co-features">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-profile-male"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Become a buddy</h3>
-								<p>Build a relationship with children who desperately need your time and mentoring skills.</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="col-md-4">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-happy"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Happy Giving</h3>
-								<p>Donate as little as £5 a much as an individual contributer or become a corporate sponsor.</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-
-					</div>
-					<div class="col-md-4">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-wallet"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Schools</h3>
-								<p>Register your school and students to enrich the lives of undr priviliges children</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="fh5co-feature-product" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center heading-section">
-						<h3>Giving is Virtue.</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div>
-				</div>
-
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-12 text-center animate-box">
-						<p><img src="images/cover_bg_1.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-					</div>
-					<div class="col-md-6 text-center animate-box">
-						<p><img src="images/cover_bg_2.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-					</div>
-					<div class="col-md-6 text-center animate-box">
-						<p><img src="images/cover_bg_3.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="feature-text">
-							<h3>Love</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-text">
-							<h3>Compassion</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-text">
-							<h3>Charity</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-				</div>
-
-				
-			</div>
-		</div>
-
-		
-		<div id="fh5co-portfolio">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center heading-section animate-box">
-						<h3>Our Gallery</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-					</div>
-				</div>
-
-				
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-12">
-						<ul id="fh5co-portfolio-list">
-
-							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_1.jpg); ">
-								<a href="#" class="color-3">
-									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
-									</div>
-								</a>
-							</li>
-						
-							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
-								<a href="#" class="color-4">
-									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
-									</div>
-								</a>
-							</li>
-
-							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_1.jpg); "> 
-								<a href="#" class="color-5">
-									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
-									</div>
-								</a>
-							</li>
-							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
-								<a href="#" class="color-6">
-									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
-									</div>
-								</a>
-							</li>
-						</ul>		
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">See Gallery</a>
-					</div>
-				</div>
-
-				
-			</div>
-		</div>
-		
-
-		
-		<div id="fh5co-content-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Our Philantrophist</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-testimonial text-center animate-box">
-							<figure>
-								<img src="images/person_1.jpg" alt="user">
-							</figure>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-							</blockquote>
-							<span>Jean Doe, XYZ Co.</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-testimonial text-center animate-box">
-							<figure>
-								<img src="images/person_2.jpg" alt="user">
-							</figure>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-							</blockquote>
-							<span>John Doe, XYZ Co.</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-testimonial text-center animate-box">
-							<figure>
-								<img src="images/person_3.jpg" alt="user">
-							</figure>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-							</blockquote>
-							<span>John Doe, XYZ Co.</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<!-- fh5co-content-section -->
 
 		<div id="fh5co-services-section">

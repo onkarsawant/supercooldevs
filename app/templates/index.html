@@ -111,9 +111,7 @@
 								 	<li><a href="#">Students</a></li>
 								 	<li><a href="#">Sponsors</a></li>
 								 	<li><a href="#">Approvals</a></li>
-								 	<li><a href="#">Student Reporting</a></li>
-								 	<li><a href="#">Buddy Reporting</a></li>
-								 	<li><a href="#">Corporate Reporting</a></li>
+								 	<li><a href="{{ url_for('fetchDBPrivate') }}">Reporting</a></li>
 								 	<li><a href="#">Charity Leads</a></li>
 								 	<li><a href="#">Unregister</a></li>
 								</ul>
@@ -144,110 +142,9 @@
 				<div class="desc animate-box">
 					<h2><strong>Empowering</strong> young people  <strong>to achieve</strong></h2>
 					<span>START YOUNG UK UK <a href="" target="_blank" class="fh5co-site-name"></a></span>
-		<h3>Registered Schools</h3>
-		<table id="schools">
-    		<tr>
-        		<td>Registration ID</td>
-        		<td>School Name</td>
-    		</tr>
 
-    		{% for data in Scdata %}
-    		<tr>
-        		<td>{{ data['sc_id'] }}</td>
-        		<td>{{ data['sc_name'] }}</td>
-    		</tr>
-    		{% endfor %}
-		</table>
-
-		<br><br><br>
-
-
-		<h3> Students Pending Sponsorship </h3><br>
-		<table id="Students">
-    		<tr>
-        		<td>Name</td>
-        		<td>Lastname</td>
-        		<td>School</td>
-        		<td>Spon. Status</td>
-    		</tr>
-
-    		{% for data in Stdata %}
-    		<tr>
-        		<td>{{ data['name'] }}</td>
-        		<td>{{ data['lastname'] }}</td>
-        		<td>{{ data['st_school'] }}</td>
-        		<td>{{ data['st_spon_status'] }}</td>
-    		</tr>
-    		{% endfor %}
-		</table>
-
-		<br><br><br>
-
-		<h3> Students Pending Screening </h3><br>
-		<table id="student_screening">
-		<tr>
-    			<td>Name</td>
-    			<td>Lastname</td>
-    			<td>School Name</td>
-    			<td>Age</td>
-    			<td>Address</td>
-    			<td>Contact</td>
-    			<td>Hobby</td>
-    			<td>Spon. status</td>
-		</tr>
-
-		{% for data in StPnSp %}
-		<tr>
-    			<td>{{ data['fname'] }}</td>
-    			<td>{{ data['lname'] }}</td>
-    			<td>{{ data['st_school'] }}</td>
-    			<td>{{ data['st_age'] }}</td>
-    			<td>{{ data['st_location'] }}</td>
-    			<td>{{ data['st_contact'] }}</td>
-    			<td>{{ data['st_hby'] }}</td>
-    			<td>{{ data['st_spon_status'] }}</td>
-		</tr>
-		{% endfor %}
-		</table>
-
-
-		<br><br><br>
-
-		<h3> Sponsors Verification </h3><br>
-
-		<table id="Sponsors">
-    		<tr>
-        		<td>Name</td>
-        		<td>Lastname</td>
-        		<td>Age</td>
-        		<td>Address</td>
-        		<td>Contact</td>
-        		<td>Hobby</td>
-        		<td>Occupation</td>
-        		<td>email</td>
-    		</tr>
-
-    		{% for data in SpPnSp %}
-    		<tr>
-        		<td>{{ data['fname'] }}</td>
-        		<td>{{ data['lname'] }}</td>
-        		<td>{{ data['sp_age'] }}</td>
-        		<td>{{ data['sp_location'] }}</td>
-        		<td>{{ data['sp_contact'] }}</td>
-        		<td>{{ data['sp_hby'] }}</td>
-        		<td>{{ data['sp_occ'] }}</td>
-        		<td>{{ data['sp_email'] }}</td>
-    		</tr>
-    		{% endfor %}
-    		</table>
-
-		</table>
-				</div>
-			</div>
-
-		</div>
-
-                
+	
+	               
 
 		<!-- end:header-top -->
 		<div id="fh5co-features">
@@ -296,6 +193,7 @@
 				</div>
 			</div>
 		</div>
+
 
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
@@ -631,5 +529,6 @@
 	<script src="js/main.js"></script>
 
 	</body>
+
 </html>
 
